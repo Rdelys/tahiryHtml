@@ -50,14 +50,17 @@
         <div class="establishment-info">
             <div class="establishment-details">
                 <h3 class="establishment-name">Subway</h3>
-                <span class="open-status">Ouvert</span>
+                <span class="open-status"><span class="emoji1">&#128341;</span>Ouvert</span>
                 </div>
                 <div class="rating-container">
-                    <span class="rating-stars">+25 avis</span>
+                  <div class="info-details">
                     <span class="rating-icon">
-                        <img src="star-icon.png" alt="star" class="rating-icon-img" />
-                        <span>3.5</span>
-                      </span>
+                      <span class="star">&#9733;</span>
+                      <span class="rating-note">4.5</span>
+                    </span>
+                      <span class="rating-stars">+25 avis</span>
+                    </div>
+
               </div>              
         </div>
       </article>
@@ -70,14 +73,16 @@
         <div class="establishment-info">
           <div class="establishment-details">
             <h3 class="establishment-name">Chiken Joy</h3>
-            <span class="open-status"><span class="emoji">🕒</span>Ouvert </span>
+            <span class="open-status"><span class="emoji1">&#128341;</span>Ouvert</span>
           </div>
           <div class="rating-container">
-            <span class="rating-stars">+15 avis</span>
-            <span class="rating-icon">
-              <img src="star-icon.png" alt="star" class="rating-icon-img" />
-              <span>4.0</span>
-            </span>
+            <div class="info-details">
+              <span class="rating-icon">
+                <span class="star">&#9733;</span>
+                <span class="rating-note">4.5</span>
+              </span>
+                <span class="rating-stars">+25 avis</span>
+              </div>
           </div>
         </div>
       </article>
@@ -93,14 +98,16 @@
         <div class="establishment-info">
           <div class="establishment-details">
             <h3 class="establishment-name">Sushi Woke</h3>
-            <span class="open-status">Ouvert <span class="emoji">🕒</span></span>
+            <span class="open-status"><span class="emoji">🕒</span>Ouvert </span>
           </div>
           <div class="rating-container">
-            <span class="rating-stars">+15 avis</span>
-            <span class="rating-icon">
-              <img src="star-icon.png" alt="star" class="rating-icon-img" />
-              <span>4.2</span>
-            </span>
+            <div class="info-details">
+              <span class="rating-icon">
+                <span class="star">&#9733;</span>
+                <span class="rating-note">4.5</span>
+              </span>
+                <span class="rating-stars">+25 avis</span>
+              </div>
           </div>
         </div>
       </article>
@@ -110,20 +117,22 @@
           <img src="https://cdn.builder.io/api/v1/image/assets/8f6c530224314a469362839ad2e0230a/d80373dc45f014b663fa914564aca2bcea0b034dde4cea99d772e3f5bf68ce6b?apiKey=8f6c530224314a469362839ad2e0230a&" alt="Burgers and Sandwiches restaurant" class="establishment-image" />
           <div class="category-tag">
             <span>Burgers</span>
-            <span>Sandwichs</span>
           </div>
         </div>
         <div class="establishment-info">
           <div class="establishment-details">
             <h3 class="establishment-name">Subway</h3>
-            <span class="open-status">Ouvert <span class="emoji">🕒</span></span>
+            <span class="open-status"><span class="emoji">🕒</span>Ouvert </span>
           </div>
           <div class="rating-container">
-            <span class="rating-stars">+15 avis</span>
-            <span class="rating-icon">
-              <img src="star-icon.png" alt="star" class="rating-icon-img" />
-              <span>4.5</span>
-            </span>
+            <div class="info-details">
+              <span class="rating-icon">
+                <span class="star">&#9733;</span>
+                <span class="rating-note">4.5</span>
+              </span>
+                <span class="rating-stars">+25 avis</span>
+              </div>
+          </div>
           </div>
         </div>
       </article>
@@ -386,8 +395,8 @@
     $('.establishments-container').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
-        prevArrow: $('.arrow-left'),
-        nextArrow: $('.arrow-right'),
+        prevArrow: $('.arrow-right'),
+        nextArrow: $('.arrow-left'),
         responsive: [
             {
                 breakpoint: 768,

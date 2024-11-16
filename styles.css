@@ -134,11 +134,12 @@ body {
 
 .establishment-info {
   padding: 10px;
+  flex-direction: column; /* Empile les éléments en colonne */
   position: relative;
   background-color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .establishment-name {
@@ -147,16 +148,34 @@ body {
   left: 10px;
   font-size: 18px;
   color: #333;
-
+  white-space: nowrap; /* Empêche le texte d'aller à la ligne */
+  overflow: hidden; /* Masque le texte trop long */
+  text-overflow: ellipsis;
 }
+
+@media (max-width: 768px) {
+  .establishments-container {
+    display: block; /* Passe à une disposition verticale */
+  }
+
+  .slick-slider {
+    slidesToShow: 1; /* Affiche une seule carte à la fois */
+  }
+}
+
 
 .open-status {
   font-size: 14px;
-  color: green;
+  color: #58d6b0;
   margin-top: 5px;
   position: absolute;
   bottom: 10px;
   left: 10px;
+}
+
+.emoji {
+  color:  #58d6b0; /* Assure que l'emoji hérite bien de la couleur */
+  margin-right: 5px; /* Ajoute un espacement entre l'emoji et le texte */
 }
 
 .emoji {
@@ -166,30 +185,50 @@ body {
 
 .rating-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Espace entre les deux */
+  align-items: center; /* Alignement vertical */
+  gap: 10px;
+}
+.info-details {
+  display: flex;
+  flex-direction: column; /* Dispose les éléments en colonne */
+  align-items: flex-start; /* Aligne les éléments à gauche */
+  gap: 5px; /* Ajoute un espace entre les deux éléments */
 }
 
 .rating-stars {
   font-size: 13px;
-  color: #ffcc00;
+  color: #d2d2d2;
 }
 
 .rating-icon {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-  /* Espacement entre l'icône et la note */
+  display: flex; /* Aligner horizontalement l'étoile et la note */
+  align-items: center; /* Centre verticalement l'étoile et la note */
+  background-color: #fdc541; /* Fond jaune pour l'ovale */
+  color: white; /* Couleur blanche pour la note */
+  border-radius: 50px; /* Forme ovale */
+  padding-right: 10px;
+  font-size: 8px; /* Taille du texte */
+  font-weight: bold; /* Texte en gras */
 }
 
-.rating-icon-img {
-  width: 16px;
-  height: 16x;
-  margin-right: 5px;
-  background-color: yellow;
-  border-radius: 50%;
-  margin-right: 5px;
-  /* Espacement entre l'icône et la note */
+
+.star {
+  display: flex; /* Permet de centrer l'étoile */
+  justify-content: right; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  background-color: #ffd700; /* Fond blanc pour l'étoile */
+  color: white; /* Couleur jaune pour l'étoile */
+  border-radius: 50%; /* Forme ronde autour de l'étoile */
+  width: 24px; /* Largeur du cercle autour de l'étoile */
+  height: 24px; /* Hauteur du cercle autour de l'étoile */
+  font-size: 16px; /* Taille de l'étoile */
+  margin-right: 8px; /* Espacement entre l'étoile et la note */
+}
+
+.rating-note {
+  font-size: 10px; /* Taille de la note */
+  color: white; /* Couleur blanche pour la note */
 }
 
 .section-title {
@@ -270,6 +309,8 @@ body {
   background-color: rgba(250, 120, 141, 0.8);
   /* Fond rouge avec opacité (80%) */
   border-radius: 10px;
+  flex-wrap: wrap; /* Permet aux cartes de s'ajuster en fonction de l'écran */
+
 }
 
 
@@ -282,14 +323,25 @@ body {
   border-radius: 9px;
   transition: transform 0.3s;
   justify-content: space-between;
-}
+  margin-bottom: 20px; /* Ajout d'une marge entre les cartes en mobile */
 
+}
+.service-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 58%; /* Proportion de l'image (ex. 16:9) */
+  overflow: hidden;
+}
 .service-card:hover {
   transform: scale(1.05);
   /* Effet d'agrandissement au survol */
 }
 
 .service-image {
+  position: relative;
+  top: 0;
+  left: 0;
+
   width: 380px;
   height: 221px;
   /* Hauteur de l'image */
@@ -414,6 +466,11 @@ body {
   .benefits-section {
     max-width: 100%;
     padding: 0 20px;
+  }
+
+  .benefits-section,
+  .steps-section {
+    margin-bottom: 30px; /* Ajuste la valeur selon l'espacement souhaité */
   }
 }
 
@@ -555,7 +612,7 @@ body {
   /* Centré par rapport aux cercles */
   transform: translateX(-50%);
   width: 4px;
-  height: 70%;
+  height: 75%;
   top: 0;
   /* Aligné sur le premier cercle */
   bottom: 0;
@@ -570,11 +627,13 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #f9f9f9;
-  padding: 20px;
+  padding-bottom: 30px;
+  padding-right: 10px;
+
 }
 
 .steps-wrapper {
-  max-width: 1200px;
+  max-width: 1225px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -590,19 +649,6 @@ body {
 
   }
 }
-
-/*.steps-line {
-  border-radius: 38px;
-  background-color: #f96e83;
-  position: absolute;
-  z-index: 0;
-  min-height: 201px;
-  width: 4px;
-  right: 672px;
-  top: 10px;
-  height: 100%;
-  left: 32px;
-}*/
 
 .steps-content {
   display: flex;
@@ -626,6 +672,8 @@ body {
   object-fit: contain;
   object-position: center;
   max-width: 50%;
+  padding-left: 10px;
+  border-radius: 20px;
   width: 100%;
   flex-grow: 1;
   margin: auto 0;
@@ -686,10 +734,15 @@ body {
 }
 
 @media (max-width: 991px) {
-  .step-item {
-    flex-direction: row; /* Aligner les éléments horizontalement */
-    justify-content: start;    /* Aligner le contenu des étapes à gauche */
+  /* Cacher les cercles */
+  .step-circle,
+  .step-circle-inner {
+    display: none;
+  }
 
+  /* Cacher la ligne verticale */
+  .vertical-line {
+    display: none;
   }
 }
 
@@ -699,8 +752,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 20px;
-  padding: 4px 0;
+  width: 20px;;
 }
 
 .step-circle-inner {
@@ -745,6 +797,8 @@ body {
   .step-title {
     max-width: 100%;
   }
+
+  
 }
 
 .step-description {
@@ -1055,32 +1109,26 @@ body {
   .hero-title {
     font-size: 2em;
   }
-
+  .service-section {
+    flex-direction: column; /* Les cartes passent en colonne sur mobile */
+    align-items: center; /* Centre les cartes horizontalement */
+  }
   .service-image {
-    width: 100%;
-    height: auto;
-    /* Reduce the image height */
+    width: 100%; /* L'image prend toute la largeur de la carte */
+    height: 150px; /* Ajuste la hauteur de l'image */
   }
 
   .service-title {
-    font-size: 1.2em;
-    /* Smaller font size for titles */
+    font-size: 1.5em; /* Réduit la taille du titre sur mobile */
   }
-
   .service-description {
     font-size: 0.9em;
     /* Smaller font size for description */
   }
 
-  .service-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .service-card {
-    width: 90%;
-    margin: 10px 0;
-
+    width: 80%; /* Prend 90% de la largeur disponible sur mobile */
+    margin-bottom: 20px; /* Espace entre les cartes */
   }
 
   .stats-container {
@@ -1149,8 +1197,14 @@ body {
     align-items: center;
   }
 
-  .step-circle {
-    margin-bottom: 10px;
+  .step-circle,
+  .step-circle-inner {
+    display: none;
+  }
+
+  /* Cacher la ligne verticale */
+  .vertical-line {
+    display: none;
   }
 }
 
@@ -1161,7 +1215,7 @@ body {
   }
 
   .service-card {
-    width: 45%;
+    width: 80%;
   }
 
   .steps-content {
