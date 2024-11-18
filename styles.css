@@ -305,18 +305,21 @@ body {
 .service-section {
   display: flex;
   justify-content: space-around;
+  gap: 40px; /* Réduit l'espace entre les cartes */
   padding: 40px 20px;
   background-color: rgba(250, 120, 141, 0.8);
   /* Fond rouge avec opacité (80%) */
   border-radius: 10px;
-  flex-wrap: wrap; /* Permet aux cartes de s'ajuster en fonction de l'écran */
+  flex-wrap: wrap;
+  max-width: 2000px; /* Largeur maximale de la section */
+  margin: 0 auto; /* Permet aux cartes de s'ajuster en fonction de l'écran */
 
 }
 
 
 .service-card {
-  width: 380px;
-  height: 450px;
+  width: 500px;
+  height: 550px;
   padding-top: 0%;
   text-align: justify;
   background-color: white;
@@ -342,8 +345,8 @@ body {
   top: 0;
   left: 0;
 
-  width: 380px;
-  height: 221px;
+  width: 500px;
+  height: 250px;
   /* Hauteur de l'image */
   object-fit: cover;
   border-radius: 8px;
@@ -353,8 +356,9 @@ body {
   align-items: center;
   font-size: 2em;
   color: #333;
-  margin-top: 15px;
+  margin-top: 18px;
   font-weight: bold;
+  padding-top: 30px;
   padding-left: 30px;
   /* Ajout d'un espace à gauche du titre */
   padding-right: 30px;
@@ -362,7 +366,7 @@ body {
 }
 
 .service-description {
-  font-size: 1em;
+  font-size: 1.2em;
   color: #666;
   margin-top: 10px;
   padding-left: 30px;
